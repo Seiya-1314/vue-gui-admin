@@ -5,18 +5,16 @@ module.exports = {
     node: true,
     es6: true
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:vue/recommended',
     '@vue/standard',
     '@vue/typescript'
   ],
-  plugins: [
-    'vue'
-  ],
+  plugins: ['vue'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'space-before-function-paren': [2, 'never'],
     'vue/array-bracket-spacing': 'error',
     'vue/arrow-spacing': 'error',
@@ -28,10 +26,12 @@ module.exports = {
     'vue/eqeqeq': 'error',
     'vue/key-spacing': 'error',
     'vue/match-component-file-name': 'error',
-    'vue/object-curly-spacing': 'error'
+    'vue/object-curly-spacing': 'error',
+    'vue/html-self-closing': 'off',
+    'semi': 'off',
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   }
-}
+};
