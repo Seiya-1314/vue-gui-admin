@@ -5,6 +5,7 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 import './plugins'
+import './icons' // icon
 
 import '@/styles/index.scss'
 
