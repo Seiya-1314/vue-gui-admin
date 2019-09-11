@@ -1,7 +1,7 @@
 <template>
-  <div :class="{'has-logo': showLogo}">
+  <div :class="{'has-logo': logoVisiable}">
     <SidebarLogo
-      v-if="showLogo"
+      v-if="logoVisiable"
       :collapse="isCollapse"
     />
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -34,6 +34,7 @@ import SidebarLogo from './SidebarLogo.vue';
 import SidebarItem from './SidebarItem.vue';
 import variables from '@/styles/_variables.scss';
 import { AppModule } from '@/store/modules/app';
+import { SettingsModule } from '@/store/modules/setting';
 
 @Component({
   name: 'Sidebar',
@@ -43,9 +44,18 @@ import { AppModule } from '@/store/modules/app';
   }
 })
 export default class extends Vue {
-  private showLogo = true;
-  private isFirstLevel = true;
-  private variables = variables;
+  private isFirstLevel: boolean ;
+  private variables: any;
+
+  constructor() {
+    super()
+    this.isFirstLevel = true;
+    this.variables = variables;
+  }
+
+  get logoVisiable() {
+    return SettingsModule.logoVisiable;
+  }
 
   get sidebar() {
     return AppModule.sidebar;

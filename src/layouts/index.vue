@@ -17,7 +17,9 @@
         <Navbar />
       </div>
       <router-view>app-main</router-view>
-      <!-- <right-panel v-if="showSettings">setting</right-panel> -->
+      <right-panel v-if="true">
+        <Setting />
+      </right-panel>
     </div>
   </div>
 </template>
@@ -26,6 +28,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Sidebar from './components/Sidebar/Sidebar.vue';
 import Navbar from '@/layouts/components/Navbar.vue';
+import RightPanel from '@/components/RightPanel/index.vue';
+import Setting from '@/layouts/components/Setting.vue';
 
 import { DeviceType, AppModule } from '@/store/modules/app';
 
@@ -33,7 +37,9 @@ import { DeviceType, AppModule } from '@/store/modules/app';
   name: 'Layout',
   components: {
     Sidebar,
-    Navbar
+    Navbar,
+    RightPanel,
+    Setting
   }
 })
 export default class extends Vue {
