@@ -33,6 +33,7 @@ import { newRouteConfig } from '@/router/index';
 import SidebarLogo from './SidebarLogo.vue';
 import SidebarItem from './SidebarItem.vue';
 import variables from '@/styles/_variables.scss';
+import { AppModule } from '@/store/modules/app';
 
 @Component({
   name: 'Sidebar',
@@ -43,12 +44,16 @@ import variables from '@/styles/_variables.scss';
 })
 export default class extends Vue {
   private showLogo = true;
-  private isCollapse = false;
   private isFirstLevel = true;
   private variables = variables;
 
-  private selectedKeysMap: any = {};
-  private openKeysMap: any = {};
+  get sidebar() {
+    return AppModule.sidebar;
+  }
+
+  get isCollapse() {
+    return !this.sidebar.opened;
+  }
 
   get defaultIndex() {
     if (this.$route.path) {
@@ -58,14 +63,14 @@ export default class extends Vue {
   }
 
   get menuList() {
-    return this.getMenuData(this.$router.options.routes);
+    return this.getMenuData(this.getRoutes(this.$router) as any);
   }
 
-  private getMenuData(
-    routes: newRouteConfig[] = [],
-    parentKeys: Array<any> = [],
-    selectedKeys?: any
-  ): Array<any> {
+  private getRoutes(router: any) {
+    return (router.options && router.options.routes) || [];
+  }
+
+  private getMenuData(routes: newRouteConfig[] = []): Array<any> {
     const menuData = [];
 
     for (let item of routes) {
@@ -75,27 +80,16 @@ export default class extends Vue {
       // }
 
       if (item.name && !item.hideInMenu) {
-        this.openKeysMap[item.path] = parentKeys;
-        this.selectedKeysMap[item.path] = [selectedKeys || item.path];
         const newItem = { ...item };
         delete newItem.children;
         if (item.children && !item.hideChildrenMenu) {
-          newItem.children = this.getMenuData(item.children, [
-            ...parentKeys,
-            item.path
-          ]);
+          newItem.children = this.getMenuData(item.children);
         } else {
-          this.getMenuData(
-            item.children,
-            selectedKeys ? parentKeys : [...parentKeys, item.path],
-            selectedKeys || item.path
-          );
+          this.getMenuData(item.children);
         }
         menuData.push(newItem);
       } else if (!item.hideInMenu && !item.hideChildrenMenu && item.children) {
-        menuData.push(
-          ...this.getMenuData(item.children, [...parentKeys, item.path])
-        );
+        menuData.push(...this.getMenuData(item.children));
       }
     }
 
@@ -157,7 +151,7 @@ export default class extends Vue {
     }
   }
 }
-.el-submenu.is-active > .el-submenu__title {
+.el-submenu .is-active > .el-submenu__title {
   color: $subMenuActiveText !important;
 }
 </style>

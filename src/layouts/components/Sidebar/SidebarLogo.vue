@@ -23,7 +23,9 @@
           src="favicon.ico"
           class="sidebar-logo"
         />
-        <h1 class="sidebar-title">{{ title }}</h1>
+        <h1 class="sidebar-title">
+          {{ title }}
+        </h1>
       </router-link>
     </transition>
   </div>
