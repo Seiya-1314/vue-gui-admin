@@ -15,8 +15,9 @@
         class="app-header"
       >
         <Navbar />
+        <TagsView v-if="tagsViewVisiable" />
       </div>
-      <router-view>app-main</router-view>
+      <AppMain :router-view-visiable="isRouterAlive" />
       <right-panel v-if="true">
         <Setting />
       </right-panel>
@@ -25,13 +26,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Provide, Vue } from 'vue-property-decorator';
+
 import Sidebar from './components/Sidebar/Sidebar.vue';
 import Navbar from '@/layouts/components/Navbar.vue';
 import RightPanel from '@/components/RightPanel/index.vue';
 import Setting from '@/layouts/components/Setting.vue';
-
+import TagsView from './components/TagsView/TagsView.vue';
+import AppMain from './components/AppMain.vue';
 import { DeviceType, AppModule } from '@/store/modules/app';
+import { SettingsModule } from '@/store/modules/setting';
 
 @Component({
   name: 'Layout',
@@ -39,15 +43,27 @@ import { DeviceType, AppModule } from '@/store/modules/app';
     Sidebar,
     Navbar,
     RightPanel,
-    Setting
+    Setting,
+    TagsView,
+    AppMain
   }
 })
 export default class extends Vue {
   private fixedHeader: boolean;
+  private isRouterAlive: boolean;
 
   constructor() {
     super();
     this.fixedHeader = false;
+    this.isRouterAlive = true;
+  }
+
+  @Provide('reload')
+  private reload() {
+    this.isRouterAlive = false;
+    this.$nextTick(function() {
+      this.isRouterAlive = true;
+    })
   }
 
   get device() {
@@ -56,6 +72,10 @@ export default class extends Vue {
 
   get sidebar() {
     return AppModule.sidebar;
+  }
+
+  get tagsViewVisiable() {
+    return SettingsModule.tagsViewVisiable;
   }
 
   get wrapperClass() {

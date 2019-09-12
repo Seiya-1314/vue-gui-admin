@@ -152,10 +152,11 @@ export default class extends Vue {
   }
 
   private refreshSelectedTag(tag: TagView) {
-    this.reload();
-    if (this.$route.path !== tag.path) {
-      this.$parent.$router.push(tag);
+    if (this.$route.path === tag.path) {
+      this.reload();
+      return;
     }
+    this.$parent.$router.push(tag);
   }
 
   private closeSelectedTag(tag: TagView) {
