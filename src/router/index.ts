@@ -11,6 +11,21 @@ import { check, islogin } from '@/utils/auth';
 
 Vue.use(Router);
 
+/**
+ * name:'router-name'             设定路由的名字，一定要填写不然使用 <keep-alive> 时会出现各种问题
+ * redirect: 'noRedirect'         当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
+ * hideInMenu: true               当设置 true 的时候该路由不会再侧边栏出现
+ * hideChildrenMenu: true         当设置 true 的时候该路由的“子路由”不会再侧边栏出现
+ *
+ * meta:
+ *    authority: ['editor']       设置该路由进入的权限，支持多个权限叠加
+ *    title: 'title'              设置该路由在侧边栏和面包屑中展示的名字
+ *    icon: 'svg-name'            设置该路由的 icon 图标
+ *    cache: true                 如果设置为 true，则将会被 <keep-alive> 缓存(默认 false)
+ *    breadcrumb: false           如果设置为 false，则不会在 breadcrumb 面包屑中显示
+ *    affix: true                 如果设置为 true，则不能再 tags-view 中关闭此页面
+ */
+
 export interface newRouteConfig extends RouteConfig {
   hideInMenu?: boolean;
   hideChildrenMenu?: boolean;
@@ -51,7 +66,8 @@ const constantRoutes: newRouteConfig[] = [
         name: 'guide',
         meta: {
           icon: 'guide',
-          title: '首页'
+          title: '首页',
+          affix: true
         },
         component: () =>
           import(/* webpackChunkName: "guide" */ '@/views/guide/index.vue')
