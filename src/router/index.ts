@@ -80,7 +80,7 @@ const constantRoutes: newRouteConfig[] = [
           title: '在线咨询'
         },
         component: () =>
-          import(/* webpackChunkName: "consult" */ '@/views/guide/index.vue')
+          import(/* webpackChunkName: "consult" */ '@/views/consult/index.vue')
       }
     ]
   },
