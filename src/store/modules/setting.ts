@@ -18,7 +18,7 @@ export interface SettingsState {
 class Settings extends VuexModule implements SettingsState {
   public fixedHeader = false;
   public settingsVisiable = true;
-  public tagsViewVisiable = false;
+  public tagsViewVisiable = true;
   public logoVisiable = false;
 
   @Mutation

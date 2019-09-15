@@ -37,7 +37,7 @@ const constantRoutes: newRouteConfig[] = [
     path: '/user',
     hideInMenu: true,
     component: () =>
-      import(/* webpackChunkName: "user" */ '@/layouts/index.vue'),
+      import(/* webpackChunkName: "user" */ '@/App.vue'),
     children: [
       {
         path: '/user',

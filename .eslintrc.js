@@ -28,6 +28,8 @@ module.exports = {
     'vue/match-component-file-name': 'error',
     'vue/object-curly-spacing': 'error',
     'vue/html-self-closing': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
     'semi': 'off',
   },
   parserOptions: {
