@@ -13,6 +13,7 @@ import { mixins } from 'vue-class-component';
 import ChartMixin from '@/mixins/chart/resize';
 
 export interface LineChartData {
+  title: string;
   expectedData: number[];
   actualData?: number[];
 }
@@ -27,7 +28,7 @@ export default class extends mixins(ChartMixin) {
   @Prop({ default: '100%' })
   private width!: string;
 
-  @Prop({ default: '350px' })
+  @Prop({ default: '400px' })
   private height!: string;
 
   @Watch('chartData', { deep: true })
@@ -58,7 +59,7 @@ export default class extends mixins(ChartMixin) {
     if (this.chart) {
       this.chart.setOption({
         title: {
-          text: '最近一周净收益：(元)',
+          text: chartData.title,
           textStyle: {
             fontSize: 16,
             lineHeight: 10,
@@ -66,7 +67,8 @@ export default class extends mixins(ChartMixin) {
           },
           textAlign: 'center',
           padding: 10,
-          left: '50%'
+          left: '50%',
+          top: 0
         },
         xAxis: {
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
