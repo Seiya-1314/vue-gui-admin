@@ -16,7 +16,7 @@ export interface SettingsState {
 
 @Module({ dynamic: true, store, name: 'settings' })
 class Settings extends VuexModule implements SettingsState {
-  public fixedHeader = false;
+  public fixedHeader = true;
   public settingsVisiable = true;
   public tagsViewVisiable = true;
   public logoVisiable = false;

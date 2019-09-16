@@ -9,7 +9,10 @@
       @click="closeMask"
     />
     <Sidebar class="sidebar-container" />
-    <div class="main-container">
+    <div
+      :class="{hasTagsView: tagsViewVisiable}"
+      class="main-container"
+    >
       <div
         :class="{'fixed-header': fixedHeader}"
         class="app-header"
@@ -49,12 +52,10 @@ import { SettingsModule } from '@/store/modules/setting';
   }
 })
 export default class extends Vue {
-  private fixedHeader: boolean;
   private isRouterAlive: boolean;
 
   constructor() {
     super();
-    this.fixedHeader = false;
     this.isRouterAlive = true;
   }
 
@@ -63,7 +64,11 @@ export default class extends Vue {
     this.isRouterAlive = false;
     this.$nextTick(function() {
       this.isRouterAlive = true;
-    })
+    });
+  }
+
+  get fixedHeader() {
+    return SettingsModule.fixedHeader;
   }
 
   get device() {

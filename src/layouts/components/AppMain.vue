@@ -43,7 +43,7 @@ export default class extends Vue {
   position: relative;
   overflow: hidden;
 }
-.fixed-header + .app-main {
+.fixed-header+.app-main {
   padding-top: 50px;
   height: 100vh;
   overflow: auto;
@@ -53,7 +53,7 @@ export default class extends Vue {
     /* 84 = navbar + tags-view = 50 + 34 */
     min-height: calc(100vh - 84px);
   }
-  .fixed-header + .app-main {
+  .fixed-header+.app-main {
     padding-top: 84px;
   }
 }

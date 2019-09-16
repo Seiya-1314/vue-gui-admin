@@ -52,7 +52,7 @@ import Breadcrumb from '@/components/Breadcrumb/index.vue';
 import { AppModule } from '@/store/modules/app';
 
 @Component({
-  name: 'navbar',
+  name: 'Navbar',
   components: {
     Hamburger,
     Breadcrumb
