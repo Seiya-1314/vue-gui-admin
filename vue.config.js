@@ -1,7 +1,7 @@
 const path = require('path');
 
 function resolve(dir) {
-  return path.join(__dirname, dir)
+  return path.join(__dirname, dir);
 }
 
 module.exports = {
@@ -18,8 +18,31 @@ module.exports = {
       ]
     }
   },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        bypass: function(req, res) {
+          if (req.headers.accept.indexOf('html') !== -1) {
+            console.log('Skipping proxy for browser request.');
+            return '/index.html';
+          } else if (process.env.MOCK !== 'none') {
+            const name = req.path
+              .split('/api/')[1]
+              .split('/')
+              .join('_');
+            const mock = require(`./mock/${name}`);
+            const result = mock(req.method);
+            /* 清理缓存 */
+            delete require.cache[require.resolve(`./mock/${name}`)];
+            return res.send(result);
+          }
+        }
+      }
+    }
+  },
   configureWebpack: {
-    devtool: process.env.NODE_ENV === 'development' ? 'cheap-source-map' : false
+    devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false
   },
   chainWebpack(config) {
     // set svg-sprite-loader
