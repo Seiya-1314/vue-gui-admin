@@ -9,6 +9,8 @@ import NotFound from '@/views/error-page/404.vue';
 import Forbidden from '@/views/error-page/403.vue';
 import { check, islogin } from '@/utils/auth';
 
+import { businessRoutes } from './modules/business';
+
 Vue.use(Router);
 
 /**
@@ -81,9 +83,10 @@ const constantRoutes: newRouteConfig[] = [
         },
         component: () =>
           import(/* webpackChunkName: "consult" */ '@/views/consult/index.vue')
-      }
+      },
     ]
   },
+  businessRoutes,
   // 403
   {
     path: '/403',
@@ -97,7 +100,8 @@ const constantRoutes: newRouteConfig[] = [
     name: '404',
     hideInMenu: true,
     component: NotFound
-  }
+  },
+
 ];
 
 const creatRouter = () =>

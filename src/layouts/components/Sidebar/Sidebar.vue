@@ -35,6 +35,7 @@ import SidebarItem from './SidebarItem.vue';
 import variables from '@/styles/_variables.scss';
 import { AppModule } from '@/store/modules/app';
 import { SettingsModule } from '@/store/modules/setting';
+import { check } from '@/utils/auth';
 
 @Component({
   name: 'Sidebar',
@@ -85,9 +86,9 @@ export default class extends Vue {
 
     for (let item of routes) {
       /* 权限不足时，隐藏菜单 */
-      // if (item.meta && item.meta.authority && !check(item.meta.authority)) {
-      //   break;
-      // }
+      if (item.meta && item.meta.authority && !check(item.meta.authority)) {
+        break;
+      }
 
       if (item.name && !item.hideInMenu) {
         const newItem = { ...item };
