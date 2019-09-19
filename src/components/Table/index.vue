@@ -169,7 +169,7 @@ const tableType: { [key: string]: any } = {
     issueTime: '咨询时间',
     respondent: '回复人',
     replyTime: '回复时间',
-    status: '是否回复',
+    status: '状态',
     statusOption: {
       danger: '未受理',
       success: '受理中',
