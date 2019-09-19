@@ -20,7 +20,7 @@ export const businessRoutes: newRouteConfig = {
         title: '文字咨询',
       },
       component: () =>
-        import(/* webpackChunkName: "user" */ '@/views/business/text/index.vue')
+        import(/* webpackChunkName: "business" */ '@/views/business/text/index.vue')
     },
     {
       path: '/business/phone_consult',
@@ -29,7 +29,7 @@ export const businessRoutes: newRouteConfig = {
         title: '电话咨询',
       },
       component: () =>
-        import(/* webpackChunkName: "user" */ '@/views/business/phone/index.vue')
+        import(/* webpackChunkName: "business" */ '@/views/business/phone/index.vue')
     },
     {
       path: '/business/vip',
@@ -38,7 +38,7 @@ export const businessRoutes: newRouteConfig = {
         title: '专项服务',
       },
       component: () =>
-        import(/* webpackChunkName: "user" */ '@/views/business/vip/index.vue')
+        import(/* webpackChunkName: "business" */ '@/views/business/vip/index.vue')
     },
     {
       path: '/business/quick',
@@ -47,7 +47,7 @@ export const businessRoutes: newRouteConfig = {
         title: '快问快答',
       },
       component: () =>
-        import(/* webpackChunkName: "user" */ '@/views/business/quick/index.vue')
+        import(/* webpackChunkName: "business" */ '@/views/business/quick/index.vue')
     },
     {
       path: '/business/pay_list',
@@ -56,7 +56,7 @@ export const businessRoutes: newRouteConfig = {
         title: '支付记录',
       },
       component: () =>
-        import(/* webpackChunkName: "user" */ '@/views/business/pay-list/index.vue')
+        import(/* webpackChunkName: "business" */ '@/views/business/pay-list/index.vue')
     },
     {
       path: '/business/evaluation',
@@ -65,7 +65,7 @@ export const businessRoutes: newRouteConfig = {
         title: '评价列表',
       },
       component: () =>
-        import(/* webpackChunkName: "user" */ '@/views/business/evaluation/index.vue')
+        import(/* webpackChunkName: "business" */ '@/views/business/evaluation/index.vue')
     }
   ]
 };
