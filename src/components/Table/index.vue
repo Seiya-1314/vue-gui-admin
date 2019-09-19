@@ -14,7 +14,7 @@
         :label="currentType.id"
         prop="id"
         align="center"
-        width="120"
+        min-width="120"
       >
         <template slot-scope="scope">
           <span>{{ scope.row.id }}</span>
@@ -24,7 +24,7 @@
         v-if="currentType.phone"
         :label="currentType.phone"
         prop="phone"
-        width="95px"
+        min-width="95px"
         align="center"
       >
         <template slot-scope="scope">
@@ -36,7 +36,7 @@
         :label="currentType.caseType"
         prop="caseType"
         align="center"
-        width="100px"
+        min-width="100px"
       >
         <template slot-scope="{row}">
           <el-tag>{{ row.caseType }}</el-tag>
@@ -46,7 +46,7 @@
         v-if="currentType.region"
         :label="currentType.region"
         prop="region"
-        width="80px"
+        min-width="80px"
         align="center"
       >
         <template slot-scope="scope">
@@ -70,7 +70,7 @@
         v-if="currentType.issueTime"
         :label="currentType.issueTime"
         prop="issueTime"
-        width="110px"
+        min-width="110px"
         align="center"
       >
         <template slot-scope="scope">
@@ -81,7 +81,7 @@
         v-if="currentType.respondent"
         :label="currentType.respondent"
         prop="respondent"
-        width="80px"
+        min-width="80px"
         align="center"
       >
         <template slot-scope="scope">
@@ -92,7 +92,7 @@
         v-if="currentType.replyTime"
         :label="currentType.replyTime"
         prop="replyTime"
-        width="110px"
+        min-width="110px"
         align="center"
       >
         <template slot-scope="scope">
@@ -104,7 +104,7 @@
         :label="currentType.status"
         prop="status"
         class-name="status-col"
-        width="85"
+        min-width="85"
       >
         <template slot-scope="{row}">
           <el-tag
@@ -124,7 +124,7 @@
       <el-table-column
         label="操作"
         align="center"
-        width="180"
+        min-width="180"
         class-name="fixed-width"
       >
         <template slot-scope="{row}">
@@ -136,7 +136,7 @@
           <el-button
             v-if="row.status === currentType.statusOption.danger"
             size="mini"
-            type="primary"
+            type="success"
             @click="accept(row)"
           >受理</el-button>
           <el-button
@@ -177,11 +177,19 @@ const tableType: { [key: string]: any } = {
     }
   },
   businessPhone: {
-    userID: '用户ID',
+    id: '用户ID',
     phone: '手机号',
-    region: '涉案地区',
+    caseType: '问题类型',
+    region: '地区',
+    issueTime: '提交时间',
+    respondent: '处理人',
+    replyTime: '处理时间',
     status: '状态',
-    statusType: ['未受理', '受理中', '已完成']
+    statusOption: {
+      danger: '未受理',
+      success: '受理中',
+      primary: '已完成'
+    }
   }
 };
 

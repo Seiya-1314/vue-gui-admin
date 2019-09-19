@@ -9,7 +9,14 @@
       style="width: 580px; margin-left:50px;"
     >
       <el-form-item label="问题详情">{{ data.issue }}</el-form-item>
-      <el-form-item :label="data.respondent">{{ data.answer }}</el-form-item>
+      <template v-if="!data.answer">
+        <el-form-item label="处理人">{{ data.respondent }}</el-form-item>
+        <el-form-item label="处理时间">{{ data.replyTime }}</el-form-item>
+      </template>
+      <el-form-item
+        v-else
+        :label="data.respondent"
+      >{{ data.answer }}</el-form-item>
     </el-form>
     <div
       slot="footer"

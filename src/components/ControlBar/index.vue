@@ -28,6 +28,13 @@
       style="width: 120px;"
       class="filter-item"
     />
+    <el-input
+      v-if="currentType.lawyer"
+      v-model="query.lawyer"
+      :placeholder="currentType.lawyer"
+      style="width: 120px;"
+      class="filter-item"
+    />
     <el-select
       v-if="currentType.caseType"
       v-model="query.caseType"
@@ -83,7 +90,7 @@ const controlBarType: { [key: string]: any } = {
     userID: '用户ID',
     phone: '手机号',
     region: '涉案地区',
-    caseType: '案件类型',
+    caseType: '问题类型',
     caseTypeOptions: [
       '房地产',
       '婚姻家庭',
@@ -98,7 +105,17 @@ const controlBarType: { [key: string]: any } = {
   businessPhone: {
     userID: '用户ID',
     phone: '手机号',
+    lawyer: '律师',
     region: '涉案地区',
+    caseType: '问题类型',
+    caseTypeOptions: [
+      '房地产',
+      '婚姻家庭',
+      '投资理财',
+      '债权债务',
+      '交通事故',
+      '商业合同'
+    ],
     status: '状态',
     statusType: ['未受理', '受理中', '已完成']
   }
