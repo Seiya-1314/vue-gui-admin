@@ -30,7 +30,7 @@
           v-if="!item.children"
           :key="item.path"
           :index="item.path"
-          @click="() => $parent.$router.push(item.path)"
+          @click="selectedMenu(item.path)"
         >
           <svg-icon
             v-if="item.meta.icon"
