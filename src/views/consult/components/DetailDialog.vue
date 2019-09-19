@@ -13,10 +13,6 @@
       <el-form-item label="案件类型">{{ data.caseType }}</el-form-item>
       <el-form-item label="涉案地区">{{ data.region }}</el-form-item>
       <el-form-item label="案件详情">{{ data.issue }}</el-form-item>
-      <el-form-item
-        v-if="data.answer"
-        :label="data.respondent"
-      >{{ data.answer }}</el-form-item>
     </el-form>
     <div
       slot="footer"

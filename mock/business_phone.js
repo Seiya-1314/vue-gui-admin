@@ -11,34 +11,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
-              '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
-            respondent: 'kingbaoz',
-            replyTime: '09-17 08:54:35',
-            issue:
-              '小区收取停车服务费，说不要业主和业主委员会同意，停车费和停车服务费是一个性质吗。',
-            issueTime: '09-17 08:54:35',
-            status: '已完成'
-          },
-          {
-            id: '20190917232300',
-            phone: '1338623xxxx',
-            caseType: '合同',
-            region: '杭州',
-            answer: '',
-            respondent: '',
-            replyTime: '',
-            issue:
-              '家人被殴打住院，牙齿掉了，腰也有问题。这个医院都能有证明。。属于什么案件，能判多久，都有什么损失可以赔偿。',
-            issueTime: '09-17 08:54:35',
-            status: '未受理'
-          },
-          {
-            id: '20190917232300',
-            phone: '1338623xxxx',
-            caseType: '债权债务',
-            region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -51,7 +24,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '合同',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -65,7 +38,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '我买的小产权房需要注意什么细节？我们签的是转让协议，集资建房。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -79,7 +52,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '合同',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -93,7 +66,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -107,7 +80,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -121,7 +94,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -134,7 +107,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -148,7 +121,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -161,7 +134,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -174,7 +147,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '劳动',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -187,7 +160,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '劳动',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -200,7 +173,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '婚姻家庭',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -214,7 +187,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '婚姻家庭',
             region: '杭州',
-            answer:
+            noanswer:
               '我买的小产权房需要注意什么细节？我们签的是转让协议，集资建房。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -228,7 +201,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -242,7 +215,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -256,7 +229,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -270,7 +243,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -283,7 +256,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '婚姻家庭',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -306,7 +279,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -320,7 +293,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '房地产',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -334,7 +307,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '房地产',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -348,7 +321,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -361,7 +334,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '婚姻家庭',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -375,7 +348,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -389,7 +362,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '婚姻家庭',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -402,7 +375,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -415,7 +388,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -429,7 +402,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '我买的小产权房需要注意什么细节？我们签的是转让协议，集资建房。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -443,7 +416,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -457,7 +430,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '劳动',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -471,7 +444,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -485,7 +458,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '合同',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -498,7 +471,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -512,7 +485,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -525,7 +498,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -538,7 +511,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -551,7 +524,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '公司',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -564,7 +537,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '没有实质的影响。如果你希望填写，尝试申请，提供亲子鉴定给公安局',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -578,7 +551,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer:
+            noanswer:
               '我买的小产权房需要注意什么细节？我们签的是转让协议，集资建房。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -592,7 +565,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '合同',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -606,7 +579,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -620,7 +593,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -634,7 +607,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -647,7 +620,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '合同',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -661,7 +634,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -675,7 +648,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -689,7 +662,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
@@ -702,7 +675,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '合同',
             region: '杭州',
-            answer:
+            noanswer:
               '从法律角度上是可以的。即便是父母，也无权私自处分儿女财产，包括上述房产和拆迁款。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -716,7 +689,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '由交警根据事故当时的实际情况划分责任。对交警责任认定书有异议的，可以自交通事故认定书送达之日起三日内,向上一级交警提出书面复核申请。',
             respondent: '客服',
             replyTime: '09-17 08:54:35',
@@ -730,7 +703,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '债权债务',
             region: '杭州',
-            answer:
+            noanswer:
               '你案情描述得不够清晰。总之，如果属于民事纠纷（比如借款等），双方可以通过协商解决，也可以向法院起诉。如果遭遇敲诈勒索等违法情形，可以报警处理。',
             respondent: 'kingbaoz',
             replyTime: '09-17 08:54:35',
@@ -744,7 +717,7 @@ function consult(method) {
             phone: '1338623xxxx',
             caseType: '交通事故',
             region: '杭州',
-            answer: '',
+            noanswer: '',
             respondent: '',
             replyTime: '',
             issue:
