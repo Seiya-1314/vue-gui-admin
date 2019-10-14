@@ -21,6 +21,28 @@
         </template>
       </el-table-column>
       <el-table-column
+        v-if="currentType.userID"
+        :label="currentType.userID"
+        prop="userID"
+        align="center"
+        min-width="80"
+      >
+        <template slot-scope="scope">
+          <span>{{ scope.row.userID }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
+        v-if="currentType.origin"
+        :label="currentType.origin"
+        prop="origin"
+        align="center"
+        min-width="80"
+      >
+        <template slot-scope="scope">
+          <span>{{ scope.row.origin }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
         v-if="currentType.phone"
         :label="currentType.phone"
         prop="phone"
@@ -36,7 +58,7 @@
         :label="currentType.caseType"
         prop="caseType"
         align="center"
-        min-width="100px"
+        width="100px"
       >
         <template slot-scope="{row}">
           <el-tag>{{ row.caseType }}</el-tag>
@@ -46,7 +68,7 @@
         v-if="currentType.region"
         :label="currentType.region"
         prop="region"
-        min-width="80px"
+        min-width="90px"
         align="center"
       >
         <template slot-scope="scope">
@@ -100,11 +122,22 @@
         </template>
       </el-table-column>
       <el-table-column
+        v-if="currentType.amount"
+        :label="currentType.amount"
+        prop="amount"
+        min-width="60px"
+        align="center"
+      >
+        <template slot-scope="scope">
+          <span>{{ scope.row.amount }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
         v-if="currentType.status"
         :label="currentType.status"
         prop="status"
         class-name="status-col"
-        min-width="85"
+        width="100"
       >
         <template slot-scope="{row}">
           <el-tag
@@ -122,21 +155,32 @@
         </template>
       </el-table-column>
       <el-table-column
+        v-if="currentType.mark"
+        :label="currentType.mark"
+        prop="mark"
+        min-width="150px"
+        align="center"
+      >
+        <template slot-scope="scope">
+          <span>{{ scope.row.mark }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
+        v-if="!currentType.optionVisible"
         label="操作"
         align="center"
-        min-width="180"
+        min-width="130"
         class-name="fixed-width"
       >
         <template slot-scope="{row}">
           <el-button
-            type="primary"
             size="mini"
             @click="detail(row)"
           >详情</el-button>
           <el-button
             v-if="row.status === currentType.statusOption.danger"
             size="mini"
-            type="success"
+            type="primary"
             @click="accept(row)"
           >受理</el-button>
           <el-button
@@ -190,6 +234,111 @@ const tableType: { [key: string]: any } = {
       success: '受理中',
       primary: '已完成'
     }
+  },
+  businessVip: {
+    id: '用户ID',
+    phone: '手机号',
+    caseType: '类型',
+    region: '地区',
+    issueTime: '提交时间',
+    respondent: '处理人',
+    replyTime: '处理时间',
+    status: '状态',
+    statusOption: {
+      danger: '未受理',
+      success: '受理中',
+      primary: '已完成'
+    },
+    mark: '备注'
+  },
+  businessQuick: {
+    id: '用户ID',
+    issue: '问题详情',
+    issueTime: '提交时间',
+    respondent: '处理人',
+    replyTime: '处理时间',
+    status: '状态',
+    statusOption: {
+      danger: '未回复',
+      success: '咨询中',
+      primary: '已完成',
+      reply: '咨询中'
+    }
+  },
+  businessPayList: {
+    id: '订单号',
+    userID: '用户ID',
+    origin: '来源',
+    region: '地区',
+    caseType: '类型',
+    issueTime: '提交时间',
+    replyTime: '处理时间',
+    amount: '支付金额',
+    status: '状态',
+    statusOption: {
+      danger: '支付失败',
+      success: '支付成功'
+    },
+    mark: '备注',
+    optionVisible: true
+  },
+  businessEvaluate: {
+    id: '订单号',
+    userID: '用户ID',
+    origin: '来源',
+    caseType: '类型',
+    replyTime: '评价时间',
+    issue: '评价内容',
+    status: '状态',
+    statusOption: {
+      danger: '屏蔽',
+      success: '正常'
+    },
+    optionVisible: true
+  },
+  lawcase: {
+    id: '订单号',
+    userID: '律师ID',
+    caseType: '类型',
+    region: '涉案地区',
+    phone: '手机号',
+    issueTime: '提交时间',
+    status: '状态',
+    origin: '来源',
+    statusOption: {
+      danger: '未通知',
+      success: '已通知'
+    },
+    optionVisible: true
+  },
+  lawyerList: {
+    id: '姓名',
+    userID: '律师ID',
+    caseType: '专长',
+    region: '所在地区',
+    phone: '手机号',
+    origin: '邮箱',
+    issueTime: '注册时间',
+    status: '认证状态',
+    statusOption: {
+      danger: '待认证',
+      success: '认证成功'
+    },
+    optionVisible: true
+  },
+  point: {
+    id: '姓名',
+    userID: '律师ID',
+    caseType: '类型',
+    origin: '分数',
+    issueTime: '时间',
+    status: '审核',
+    statusOption: {
+      danger: '已审核',
+      success: '未审核'
+    },
+    mark: '说明',
+    optionVisible: true
   }
 };
 
