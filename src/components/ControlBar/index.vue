@@ -53,7 +53,7 @@
     <el-select
       v-if="currentType.status"
       v-model="query.status"
-      placeholder="回复状态"
+      placeholder="状态"
       clearable
       class="filter-item"
       style="width: 130px"
@@ -73,6 +73,7 @@
       @click="search"
     >搜索</el-button>
     <el-button
+      v-if="!currentType.exportVisable"
       v-waves
       class="filter-item"
       type="primary"
@@ -118,6 +119,99 @@ const controlBarType: { [key: string]: any } = {
     ],
     status: '状态',
     statusType: ['未受理', '受理中', '已完成']
+  },
+  businessVip: {
+    userID: '用户ID',
+    phone: '手机号',
+    caseType: '类型',
+    caseTypeOptions: [
+      '代写文书',
+      '合同审查',
+      '律师函',
+      '自助打官司'
+    ],
+    status: '状态',
+    statusType: ['未受理', '受理中', '已完成']
+  },
+  businessQuick: {
+    userID: '用户ID',
+    status: '状态',
+    statusType: ['未回复', '咨询中', '已完成']
+  },
+  businessPayList: {
+    id: '订单号',
+    userID: '用户ID',
+    caseType: '类型',
+    caseTypeOptions: [
+      '文字咨询',
+      '电话咨询',
+      '代写文书',
+      '合同审查',
+      '律师函',
+      '自助打官司'
+    ],
+    status: '状态',
+    statusType: ['支付成功', '支付失败'],
+    exportVisable: true
+  },
+  businessEvaluate: {
+    id: '订单号',
+    userID: '用户ID',
+    caseType: '类型',
+    caseTypeOptions: [
+      '文字咨询',
+      '电话咨询',
+      '代写文书',
+      '合同审查',
+      '律师函',
+      '自助打官司'
+    ],
+    status: '状态',
+    statusType: ['正常', '屏蔽'],
+    exportVisable: true
+  },
+  lawcase: {
+    id: '订单号',
+    userID: '律师ID',
+    caseType: '类型',
+    caseTypeOptions: [
+      '文字咨询',
+      '电话咨询',
+      '代写文书',
+      '合同审查',
+      '律师函',
+      '自助打官司'
+    ],
+    status: '状态',
+    statusType: ['已通知', '未通知'],
+    exportVisable: true
+  },
+  lawyerList: {
+    userID: '律师ID',
+    caseType: '选择专长',
+    caseTypeOptions: [
+      '文字咨询',
+      '电话咨询',
+      '代写文书',
+      '合同审查',
+      '律师函',
+      '自助打官司'
+    ],
+    status: '认证状态',
+    statusType: ['待认证', '审核中', '认证成功'],
+    exportVisable: true
+  },
+  point: {
+    userID: '关键词',
+    caseType: '类型',
+    caseTypeOptions: [
+      '服务',
+      '推广',
+      '案件',
+      '其他',
+      '全部'
+    ],
+    exportVisable: true
   }
 };
 
