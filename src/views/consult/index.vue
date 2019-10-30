@@ -154,7 +154,6 @@ export default class extends Vue {
   }
 
   private updateConsult(value: string) {
-    console.log(value);
     this.$notify({
       title: '回复成功',
       message: '您已成功回复！',
