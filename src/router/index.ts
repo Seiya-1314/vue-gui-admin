@@ -10,6 +10,8 @@ import Forbidden from '@/views/error-page/403.vue';
 import { check, islogin } from '@/utils/auth';
 
 import { businessRoutes } from './modules/business';
+import { lawcaseRoutes } from './modules/lawcase';
+import { lawyerRoutes } from './modules/lawyer';
 
 Vue.use(Router);
 
@@ -87,6 +89,8 @@ const constantRoutes: newRouteConfig[] = [
     ]
   },
   businessRoutes,
+  lawcaseRoutes,
+  lawyerRoutes,
   // 403
   {
     path: '/403',
