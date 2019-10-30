@@ -18,7 +18,7 @@
     </el-menu-item>
     <el-submenu
       v-else
-      index="2"
+      :index="menuInfo.path"
       popper-append-to-body
     >
       <template slot="title">
